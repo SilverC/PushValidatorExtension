@@ -21,6 +21,12 @@
             "content_script.js"
         ]
     }],
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "<all_urls>"
+    ],
     "browser_action": {
         "default_icon": {
             "64": "icons/smartphone_64.png",
@@ -28,15 +34,6 @@
             "16": "icons/smartphone_16.png"
         },
         "default_popup": "browserAction/index.html",
-        "default_title": "PushValidator"
-    },
-    "page_action": {
-        "default_icon": {
-            "64": "icons/smartphone_64.png",
-            "32": "icons/smartphone_32.png",
-            "16": "icons/smartphone_16.png"
-        },
-        "default_popup": "pageAction/index.html",
         "default_title": "PushValidator"
     },
     "options_ui": {
