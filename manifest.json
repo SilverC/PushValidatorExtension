@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+    "name": "PushValidator",
+    "description": "Browser extension that generates a QR code that allows the PushValidator mobile app to validate a user's login attempt.",
+    "version": "0.0.1",
+    "icons": {
+        "64": "icons/smartphone_64.png",
+        "32": "icons/smartphone_32.png",
+        "16": "icons/smartphone_16.png"
+    },
+    "background": {
+        "scripts": [
+            "background_script.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://*.mozilla.org/*"
+        ],
+        "js": [
+            "content_script.js"
+        ]
+    }],
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "64": "icons/smartphone_64.png",
+            "32": "icons/smartphone_32.png",
+            "16": "icons/smartphone_16.png"
+        },
+        "default_popup": "browserAction/index.html",
+        "default_title": "PushValidator"
+    },
+    "options_ui": {
+        "page": "options/index.html"
+    }
+}
